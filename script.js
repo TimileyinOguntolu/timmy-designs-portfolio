@@ -117,11 +117,17 @@ document.addEventListener("keydown", function (event) {
 });
 
 
+
 // PROJECT CASE STUDIES
 
 const caseStudyModal = document.getElementById("caseStudyModal");
 const caseStudyBody = document.getElementById("caseStudyBody");
 const caseStudyClose = document.getElementById("caseStudyClose");
+
+let caseStudyHistoryOpen = false;
+
+
+// PROJECT INFORMATION
 
 const projectData = {
   zico: {
@@ -186,6 +192,9 @@ const projectData = {
   }
 };
 
+
+// OPEN CASE STUDY
+
 function openCaseStudy(project) {
   const data = projectData[project];
 
@@ -233,12 +242,39 @@ function openCaseStudy(project) {
 
   caseStudyModal.classList.add("active");
   document.body.style.overflow = "hidden";
+
+  if (!caseStudyHistoryOpen) {
+    history.pushState(
+      { caseStudyOpen: true },
+      "",
+      "#case-study"
+    );
+
+    caseStudyHistoryOpen = true;
+  }
 }
 
-function closeCaseStudy() {
+
+// CLOSE CASE STUDY
+
+function closeCaseStudyModal() {
   caseStudyModal.classList.remove("active");
   document.body.style.overflow = "";
 }
+
+
+// REQUEST MODAL CLOSURE
+
+function requestCloseCaseStudy() {
+  if (caseStudyHistoryOpen) {
+    history.back();
+  } else {
+    closeCaseStudyModal();
+  }
+}
+
+
+// CASE STUDY BUTTONS
 
 const caseStudyButtons = document.querySelectorAll(".case-study-btn");
 
@@ -249,16 +285,38 @@ caseStudyButtons.forEach(function (button) {
   });
 });
 
-caseStudyClose.addEventListener("click", closeCaseStudy);
+
+// CLOSE BUTTON
+
+caseStudyClose.addEventListener("click", requestCloseCaseStudy);
+
+
+// CLOSE WHEN BACKGROUND IS CLICKED
 
 caseStudyModal.addEventListener("click", function (event) {
   if (event.target === caseStudyModal) {
-    closeCaseStudy();
+    requestCloseCaseStudy();
   }
 });
 
+
+// PHONE / BROWSER BACK BUTTON
+
+window.addEventListener("popstate", function () {
+  if (caseStudyHistoryOpen) {
+    caseStudyHistoryOpen = false;
+    closeCaseStudyModal();
+  }
+});
+
+
+// ESCAPE KEY
+
 document.addEventListener("keydown", function (event) {
-  if (event.key === "Escape") {
-    closeCaseStudy();
+  if (
+    event.key === "Escape" &&
+    caseStudyModal.classList.contains("active")
+  ) {
+    requestCloseCaseStudy();
   }
 });
