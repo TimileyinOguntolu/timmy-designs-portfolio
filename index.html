@@ -1,28 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Timmy Designs creates thoughtful, impactful graphic designs that help brands stand out and connect with their audience.">
-<meta name="theme-color" content="#0d0d0d">
+
+  <!-- SEO -->
+  <title>Timmy Designs | Graphic Designer & Web Developer</title>
+
+  <meta name="description" content="Explore Timmy Designs, the portfolio of a creative graphic designer specializing in impactful visual designs for brands and businesses.">
+
+  <meta name="theme-color" content="#0d0d0d">
+
+  <link rel="canonical" href="https://timmy-designs-portfolio.vercel.app/">
+
   <!-- Open Graph / Social Sharing -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="Timmy Designs | Creative Graphic Designer">
-<meta property="og:description" content="Creative graphic design and web development. Turning ideas into visual impact.">
-<meta property="og:image" content="https://timmy-designs-portfolio.vercel.app/images/social-preview.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Timmy Designs | Graphic Designer & Web Developer">
+  <meta property="og:description" content="Explore creative graphic design projects by Timmy Designs. Turning ideas into visual impact.">
+  <meta property="og:image" content="https://timmy-designs-portfolio.vercel.app/images/social-preview.png">
+  <meta property="og:image:alt" content="Timmy Designs brand banner">
+  <meta property="og:site_name" content="Timmy Designs">
+  <meta property="og:url" content="https://timmy-designs-portfolio.vercel.app/">
 
-<meta property="og:image:alt" content="Timmy Designs brand banner">
-<meta property="og:site_name" content="Timmy Designs">
+  <!-- Twitter / X Sharing -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Timmy Designs | Graphic Designer & Web Developer">
+  <meta name="twitter:description" content="Explore creative graphic design projects by Timmy Designs. Turning ideas into visual impact.">
+  <meta name="twitter:image" content="https://timmy-designs-portfolio.vercel.app/images/social-preview.png">
 
-<!-- Twitter / X Sharing -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Timmy Designs | Creative Graphic Designer">
-<meta name="twitter:description" content="Creative graphic design and web development. Turning ideas into visual impact.">
-<meta name="twitter:image" content="https://timmy-designs-portfolio.vercel.app/images/social-preview.png">
-  <title>Timmy Designs | Portfolio</title>
+  <!-- Stylesheet and Favicon -->
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
+
 <body>
   <div class="preloader" id="preloader">
   <div class="preloader-content">
@@ -88,50 +99,78 @@
     </p>
   </div>
 
-  <div class="portfolio-grid">
+      <div class="portfolio-grid">
 
-    <article class="project-card">
-      <div class="project-image">
-        <img src="images/project-1.jpg" alt="Project 1 design preview">
-      </div>
-      <div class="project-info">
-        <h3>Zico Elite</h3>
-        <p>Social Media Design</p>
-      </div>
-    </article>
+  <article class="project-card">
+    <div class="project-image">
+      <img src="images/project-1.jpg" alt="Zico Elite social media promotional graphic">
+    </div>
+    <div class="project-info">
+      <h3>Zico Elite</h3>
+      <p>Social Media Design</p>
+      <button class="case-study-btn" data-project="zico">
+        View Case Study <span>&rarr;</span>
+      </button>
+    </div>
+  </article>
 
-    <article class="project-card">
-      <div class="project-image">
-        <img src="images/project-2.jpg" alt="Project 2 design preview">
-      </div>
-      <div class="project-info">
-        <h3>Shot By AySense</h3>
-        <p>Brand Promotion</p>
-      </div>
-    </article>
+  <article class="project-card">
+    <div class="project-image">
+      <img src="images/project-2.jpg" alt="Shot By AySense brand promotional design">
+    </div>
+    <div class="project-info">
+      <h3>Shot By AySense</h3>
+      <p>Brand Promotion</p>
+      <button class="case-study-btn" data-project="aysense">
+        View Case Study <span>&rarr;</span>
+      </button>
+    </div>
+  </article>
 
-    <article class="project-card">
-      <div class="project-image">
-        <img src="images/project-3.jpg" alt="Project 3 design preview">
-      </div>
-      <div class="project-info">
-        <h3>Valentine</h3>
-        <p>Event Design</p>
-      </div>
-    </article>
+  <article class="project-card">
+    <div class="project-image">
+      <img src="images/project-3.jpg" alt="Valentine event promotional flyer">
+    </div>
+    <div class="project-info">
+      <h3>Valentine</h3>
+      <p>Event Design</p>
+      <button class="case-study-btn" data-project="valentine">
+        View Case Study <span>&rarr;</span>
+      </button>
+    </div>
+  </article>
 
-    <article class="project-card">
-      <div class="project-image">
-        <img src="images/project-4.jpg" alt="Project 4 design preview">
-      </div>
-      <div class="project-info">
-        <h3>Janey Sweet Treats</h3>
-        <p>Advertising Design</p>
-      </div>
-    </article>
+  <article class="project-card">
+    <div class="project-image">
+      <img src="images/project-4.jpg" alt="Janey Sweet Treats advertising design">
+    </div>
+    <div class="project-info">
+      <h3>Janey Sweet Treats</h3>
+      <p>Advertising Design</p>
+      <button class="case-study-btn" data-project="janey">
+        View Case Study <span>&rarr;</span>
+      </button>
+    </div>
+  </article>
 
+      </div>
+      
+      <div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close preview">&times;</button>
+  <img src="" alt="" id="lightboxImage">
+      </div>
+
+      <!-- PROJECT CASE STUDY MODAL -->
+
+<div class="case-study-modal" id="caseStudyModal">
+  <div class="case-study-content">
+    <button class="case-study-close" id="caseStudyClose" aria-label="Close case study">&times;</button>
+
+    <div class="case-study-body" id="caseStudyBody">
+    </div>
   </div>
-
+</div>
+      
     </section>
 
     <section class="about-section container" id="about">
